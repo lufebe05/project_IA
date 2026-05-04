@@ -44,3 +44,5 @@ Para replicar este entorno en tu máquina, sigue estos pasos:
    ```powershell
    git clone git@github.com:lufebe05/project_IA.git
    cd project_IA
+
+---
