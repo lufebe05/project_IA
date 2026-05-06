@@ -8,3 +8,11 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Ignorar carpetas ocultas del sistema o editores
+.DS_Store
+.vscode/
+.idea/
+.claude/
+.antigravity/
+.agent/
