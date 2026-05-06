@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/lufeb/AppData/Local/Programs/Python/**)",
+      "Read(//c/Users/lufeb/AppData/Local/Programs/Python/Python314/**)",
+      "Bash(where python *)",
+      "Bash(where python3 *)",
+      "Bash(C:/Users/lufeb/AppData/Local/Programs/Python/Python314/python.exe --version)"
+    ]
+  }
+}
