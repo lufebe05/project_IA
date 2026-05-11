@@ -1,48 +1,52 @@
-# Proyecto IA: Sistema de Mantenimiento Predictivo IA (AI4I 2020)
+# Proyecto IA: Sistema de Mantenimiento Predictivo (AI4I 2020)
 
-Proyecto para la especialización en Ciencia de Datos e Inteligencia Artificial. El objetivo es predecir fallas en maquinaria industrial utilizando el dataset AI4I 2020 y el modelo de lenguaje Gemma para la asistencia al usuario. 
+Proyecto para la Especialización en Ciencia de Datos e Inteligencia Artificial (Universidad de Medellín). El objetivo es predecir fallas en maquinaria industrial utilizando técnicas de Machine Learning para optimizar procesos de mantenimiento y reducir costos por paradas no programadas.
 
 ---
 
 ## 🛠️ Tecnologías y Herramientas
-* **Lenguaje:** Python 3.14.4
-* **Gestor de Entorno:** [uv](https://github.com/astral-sh/uv) (Gestión de paquetes ultrarrápida)
-* **Editor:** Cursor (AI Code Editor)
-* **Terminal:** PowerShell
-* **Control de Versiones:** Git & GitHub (Conexión segura vía SSH)
-* **Librerías Base:** Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn.
-* **Dataset:** [AI4I 2020 Predictive Maintenance](https://www.kaggle.com/datasets/stephanmathew/predictive-maintenance-dataset-ai4i-2020)
+* **Lenguaje:** Python 3.14.4 (Gestionado con `uv`)
+* **Entorno:** Windows 11
+* **Editor/IDE:** VScode
+* **Terminal:** Powershell
+* **Control de Versiones:** Git & GitHub (SSH)
+* **Stack IA:** Scikit-learn, Imbalanced-learn (Oversampling), Pandas, NumPy.
+* **Visualización:** Seaborn & Matplotlib.
+
+---
+
+## 📊 Pipeline del Proyecto
+El proyecto ha completado las siguientes fases críticas:
+
+1.  **EDA:** Análisis exploratorio identificando un fuerte desbalance de clases (96.6% normal vs 3.4% falla).
+2.  **Preprocesamiento:** * Eliminación de redundancias (Air temperature) y fuga de datos (causas específicas de falla).
+    * Balanceo de datos mediante **RandomOverSampler** para mejorar la detección de minorías.
+3.  **Evaluación de Modelos:** Creación de una clase personalizada para pruebas automatizadas (`ModelEvaluation`).
+4.  **Modelo Ganador:** Implementación de **Random Forest**, logrando un balance óptimo entre precisión y estabilidad.
+
+---
+
+## 🏆 Resultados del Modelo (Random Forest)
+Tras comparar múltiples algoritmos, el Bosque Aleatorio obtuvo los mejores resultados:
+
+* **Accuracy:** 99.46%
+* **Cross Validation (Estabilidad):** 96.38%
+* **Fallas Detectadas (Recall):** 100% (Cero falsos negativos)
+* **AUC Score:** 0.99
 
 ---
 
 ## 📂 Estructura del Proyecto
-El proyecto sigue una estructura profesional de Ciencia de Datos:
-
-* `data/`: Almacenamiento de datasets (Raw para datos brutos y Processed para datos limpios).
-* - `data/raw/`: Dataset original sin modificaciones.
-* - `data/procesado/`: (Pendiente) Datos tras limpieza y feature engineering.
-* `notebooks/`: Jupyter Notebooks para análisis exploratorio (EDA) y experimentación.
-* `src/`: Scripts de Python (.py) para procesamiento y modelos finales.
-* `pyproject.toml`: Archivo maestro de configuración de dependencias.
-* `uv.lock`: Registro de versiones exactas para reproducibilidad.
-
----
-
-### 📝 Notas de la Sesión Actual
-1. Configuración del entorno con `uv`.
-2. Instalación de: `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`, `ipykernel`.
-3. Creación del notebook `01_eda_mantenimiento.ipynb`.
-4. Verificación de carga exitosa del DataFrame original.
+* `data/`: Datasets originales y procesados.
+* `notebooks/`: Experimentación con Regresión Logística, KNN, Árboles de Decisión y Random Forest.
+* `models/`: Archivos `.joblib` con los modelos entrenados listos para producción.
+* `src/`: Scripts de procesamiento y lógica de predicción.
 
 ---
 
 ## 🚀 Configuración del Entorno Local
 
-Para replicar este entorno en tu máquina, sigue estos pasos:
-
 1. **Clonar el repositorio:**
-   ```powershell
+   ```bash
    git clone git@github.com:lufebe05/project_IA.git
    cd project_IA
-   
----
