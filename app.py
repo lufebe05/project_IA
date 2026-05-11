@@ -16,7 +16,7 @@ st.set_page_config(
 # ---------------------------------------------------------------------------
 # Carga del modelo con caché
 # ---------------------------------------------------------------------------
-MODEL_PATH = os.path.join(os.path.dirname(__file__), "notebooks", "modelo_mantenimiento_predictivo.joblib")
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "src", "models", "modelo_mantenimiento_predictivo.joblib")
 
 @st.cache_resource
 def load_model():
