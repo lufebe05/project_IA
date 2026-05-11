@@ -1,4 +1,5 @@
-# Proyecto IA: Sistema de Mantenimiento Predictivo (AI4I 2020)
+# Proyecto IA: Sistema de Mantenimiento Predictivo (AI4I 2020 - UCI Machine Learning Repository)
+http://archive.ics.uci.edu › datasets
 
 Proyecto para la Especialización en Ciencia de Datos e Inteligencia Artificial (Universidad de Medellín). El objetivo es predecir fallas en maquinaria industrial utilizando técnicas de Machine Learning para optimizar procesos de mantenimiento y reducir costos por paradas no programadas.
 
