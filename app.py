@@ -171,12 +171,12 @@ with col2:
 st.divider()
 st.markdown(
     """
-    <small>
-    **Modelo:** Random Forest Classifier · Precisión en prueba: 99.4% · AUC: 0.99<br>
-    **Dataset:** AI4I 2020 Predictive Maintenance Dataset — UCI Machine Learning Repository<br>
-    **Nota:** <code>Air temperature [K]</code> fue excluida del modelo durante el EDA por alta colinealidad con
-    la temperatura del proceso (r = 0.88).
-    </small>
+    <div style="font-size: 0.85em; line-height: 1.6;">
+        <b>Modelo:</b> Random Forest Classifier · Precisión en prueba: 99.4% · AUC: 0.99<br>
+        <b>Dataset:</b> AI4I 2020 Predictive Maintenance Dataset — UCI Machine Learning Repository<br>
+        <b>Nota:</b> <code>Air temperature [K]</code> fue excluida del modelo durante el EDA por alta colinealidad con
+        la temperatura del proceso (r = 0.88).
+    </div>
     """,
     unsafe_allow_html=True,
 )
