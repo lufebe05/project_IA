@@ -1,48 +1,59 @@
-# Proyecto IA: Sistema de Mantenimiento Predictivo (AI4I 2020 - UCI Machine Learning Repository)
+# Sistema de Mantenimiento Predictivo 🛠️
+### Dataset: AI4I 2020 - UCI Machine Learning Repository
 http://archive.ics.uci.edu › datasets
 
-Proyecto para la Especialización en Ciencia de Datos e Inteligencia Artificial (Universidad de Medellín). El objetivo es predecir fallas en maquinaria industrial utilizando técnicas de Machine Learning para optimizar procesos de mantenimiento y reducir costos por paradas no programadas.
+Este proyecto ha sido desarrollado como parte de la **Especialización en Ciencia de Datos e Inteligencia Artificial** de la **Escuela de Ingeniería de Antioquia (EIA)**. El objetivo principal es predecir fallas en maquinaria industrial mediante técnicas avanzadas de Machine Learning, optimizando los ciclos de mantenimiento y reduciendo costos operativos por paradas no programadas.
 
 ---
 
-## 🛠️ Tecnologías y Herramientas
-* **Lenguaje:** Python 3.14.4 (Gestionado con `uv`)
-* **Entorno:** Windows 11
-* **Editor/IDE:** VScode
-* **Terminal:** Powershell
+## 🛠️ Tecnologías y Stack Técnico
+
+* **Lenguaje:** Python 3.12+ (Gestionado de forma eficiente con `uv`)
+* **Editor & Terminal:** Cursor / VS Code + Warp
 * **Control de Versiones:** Git & GitHub (SSH)
-* **Stack IA:** Scikit-learn, Imbalanced-learn (Oversampling), Pandas, NumPy.
+* **Stack de Datos:** Pandas, NumPy, Scikit-learn.
+* **Balanceo de Datos:** Imbalanced-learn (RandomOverSampler).
 * **Visualización:** Seaborn & Matplotlib.
+* **Despliegue:** Streamlit.
 
 ---
 
 ## 📊 Pipeline del Proyecto
-El proyecto ha completado las siguientes fases críticas:
 
-1.  **EDA:** Análisis exploratorio identificando un fuerte desbalance de clases (96.6% normal vs 3.4% falla).
-2.  **Preprocesamiento:** * Eliminación de redundancias (Air temperature) y fuga de datos (causas específicas de falla).
-    * Balanceo de datos mediante **RandomOverSampler** para mejorar la detección de minorías.
-3.  **Evaluación de Modelos:** Creación de una clase personalizada para pruebas automatizadas (`ModelEvaluation`).
-4.  **Modelo Ganador:** Implementación de **Random Forest**, logrando un balance óptimo entre precisión y estabilidad.
+El desarrollo se estructuró en cuatro fases críticas para garantizar la robustez del modelo:
+
+1.  **Análisis Exploratorio (EDA):** Identificación de un fuerte desbalance de clases (96.6% estado normal vs. 3.4% fallas).
+2.  **Preprocesamiento Avanzado:** 
+    * Eliminación de redundancias térmicas y variables que generaban *data leakage* (fuga de datos).
+    * Aplicación de **RandomOverSampler** para equilibrar la representatividad de las fallas.
+3.  **Evaluación de Modelos:** Implementación de una clase personalizada `ModelEvaluation` para automatizar pruebas comparativas.
+4.  **Modelo Final:** **Random Forest**, seleccionado por su excepcional capacidad de generalización y estabilidad.
 
 ---
 
 ## 🏆 Resultados del Modelo (Random Forest)
-Tras comparar múltiples algoritmos, el Bosque Aleatorio obtuvo los mejores resultados:
 
-* **Accuracy:** 99.46%
-* **Cross Validation (Estabilidad):** 96.38%
-* **Fallas Detectadas (Recall):** 100% (Cero falsos negativos)
-* **AUC Score:** 0.99
+El modelo final presenta métricas de alto rendimiento, ideales para entornos industriales donde omitir una falla es crítico:
+
+| Métrica | Resultado |
+| :--- | :--- |
+| **Accuracy** | 99.46% |
+| **Recall (Detección de Fallas)** | 100% |
+| **Cross Validation** | 96.38% |
+| **AUC Score** | 0.99 |
 
 ---
 
-## 📂 Estructura del Proyecto
-* `data/`: Datasets originales y procesados.
-* `notebooks/`: Experimentación con Regresión Logística, KNN, Árboles de Decisión y Random Forest.
-* `models/`: Archivos `.joblib` con los modelos entrenados listos para producción.
-* `src/`: Scripts de procesamiento y lógica de predicción.
+## 📂 Estructura del Repositorio
 
+```text
+├── data/               # Datasets originales y procesados
+├── notebooks/          # Experimentación (LR, KNN, DT, Random Forest)
+├── src/
+│   ├── models/         # Modelos entrenados (.joblib)
+│   └── processing/     # Scripts de lógica y preprocesamiento
+├── app.py              # Aplicación de interfaz con Streamlit
+└── pyproject.toml      # Configuración del entorno con uv
 ---
 
 ## 🚀 Configuración del Entorno Local
@@ -51,3 +62,12 @@ Tras comparar múltiples algoritmos, el Bosque Aleatorio obtuvo los mejores resu
    ```bash
    git clone git@github.com:lufebe05/project_IA.git
    cd project_IA
+
+2. **Ejecucion de la app en Streamlit**
+    ```bash
+    uv run streamlit run app.py
+    **En caso de requerir una instalación de dependencias en tiempo de ejecución, utiliza:**
+    uv run --with streamlit streamlit run app.py
+
+Desarrollado por: Luis Fernando Betancurt Betancourt
+Institución: Universidad de Medellin (UdeM)
