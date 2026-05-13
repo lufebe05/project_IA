@@ -60,8 +60,8 @@ El modelo final presenta métricas de alto rendimiento, ideales para entornos in
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone git@github.com:lufebe05/project_IA.git
-   cd project_IA
+   git clone git@github.com:lufebe05/Lu-clasificacion-maquinaria
+   cd Lu-clasificacion-maquinaria
 
 2. **Ejecucion de la app en Streamlit**
     ```bash
